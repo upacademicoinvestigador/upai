@@ -2,12 +2,29 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>UPAI | Universidad e Investigación</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="UPAI es una iniciativa para construir una organización especializada en universidad, investigación y ciencia en España."
+  >
+
+  <title>
+    UPAI | Universidad e Investigación
+  </title>
+
 
   <style>
+
+    /* =========================
+       BASE
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -20,236 +37,574 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f8fb;
-      color: #172033;
-      line-height: 1.6;
+      background: #f6f1e8;
+      color: #222222;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
     }
 
-    /* CABECERA */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .small-label {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6e7d4f;
+      margin-bottom: 14px;
+    }
+
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid #d8d0c4;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
-      background: white;
-      border-bottom: 1px solid #e4e8ef;
+      background: rgba(246, 241, 232, 0.97);
+      border-bottom: 1px solid #d8d0c4;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 20px 25px;
-
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #123c69;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
+      justify-content: space-between;
       gap: 30px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #334155;
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .brand-name {
+      color: #6a2032;
+      font-size: 29px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-subtitle {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #687078;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: #176b87;
+    .nav-links a {
+      color: #30363a;
     }
 
-    /* HERO */
+    .nav-links a:hover {
+      color: #6a2032;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      background:
-        linear-gradient(135deg, #123c69, #176b87);
-
-      color: white;
-
-      padding: 110px 25px;
+      padding: 120px 0 100px;
     }
 
-    .hero-content {
-      max-width: 1050px;
-      margin: auto;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+      gap: 70px;
+      align-items: start;
     }
 
     .hero h1 {
-      font-size: 56px;
-      line-height: 1.1;
-      max-width: 850px;
-      margin-bottom: 25px;
+      max-width: 900px;
+      color: #642033;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      margin-bottom: 30px;
     }
 
-    .hero p {
-      font-size: 21px;
-      max-width: 720px;
-      margin-bottom: 35px;
-      color: #e6f3f7;
+    .hero-lead {
+      max-width: 790px;
+      font-size: 22px;
+      color: #33363a;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .button {
       display: inline-block;
-
-      background: white;
-      color: #123c69;
-
-      padding: 14px 25px;
-
-      border-radius: 8px;
-
-      text-decoration: none;
+      padding: 14px 21px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       font-weight: 700;
+      border: 1px solid #642033;
+      transition: 0.2s ease;
+    }
 
-      margin-right: 10px;
+    .button-primary {
+      background: #642033;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #51192a;
     }
 
     .button-secondary {
       background: transparent;
-      border: 2px solid white;
-      color: white;
+      color: #642033;
     }
 
-    /* SECCIONES */
-
-    section {
-      padding: 90px 25px;
+    .button-secondary:hover {
+      background: #ede2df;
     }
 
-    .container {
-      max-width: 1050px;
-      margin: auto;
+    .hero-note {
+      border-top: 5px solid #6e7d4f;
+      padding-top: 24px;
     }
+
+    .hero-note h2 {
+      color: #642033;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .hero-note p {
+      font-size: 17px;
+      color: #464a4d;
+      margin-bottom: 13px;
+    }
+
+
+    /* =========================
+       TITULOS
+    ========================= */
 
     .section-title {
-      font-size: 38px;
-      margin-bottom: 15px;
-      color: #123c69;
+      color: #642033;
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+      margin-bottom: 22px;
     }
 
     .section-intro {
-      font-size: 19px;
-      color: #64748b;
-      max-width: 750px;
-      margin-bottom: 45px;
+      font-size: 20px;
+      max-width: 840px;
+      color: #42464a;
+      margin-bottom: 50px;
     }
 
-    /* TARJETAS */
 
-    .cards {
+    /* =========================
+       DIAGNOSTICO
+    ========================= */
+
+    .diagnosis {
+      background: #fffdf8;
+    }
+
+    .diagnosis-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #d8d0c4;
+      border-left: 1px solid #d8d0c4;
     }
 
-    .card {
-      background: white;
-
-      padding: 30px;
-
-      border-radius: 12px;
-
-      border: 1px solid #e3e8ef;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.04);
+    .diagnosis-item {
+      padding: 32px;
+      border-right: 1px solid #d8d0c4;
+      border-bottom: 1px solid #d8d0c4;
     }
 
-    .card h3 {
+    .diagnosis-number {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #6e7d4f;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 26px;
+    }
+
+    .diagnosis-item h3 {
+      color: #642033;
+      font-size: 24px;
       margin-bottom: 12px;
-      color: #123c69;
     }
 
-    .card p {
-      color: #64748b;
+    .diagnosis-item p {
+      color: #4d5053;
+      font-size: 17px;
     }
 
-    /* PARTICIPACIÓN */
 
-    .participa {
-      background: #eaf3f7;
+    /* =========================
+       MANIFIESTO
+    ========================= */
+
+    .manifesto {
+      background: #642033;
+      color: #f7efe9;
     }
 
-    .participa-box {
-      max-width: 850px;
-
-      background: white;
-
-      padding: 50px;
-
-      border-radius: 14px;
-
-      box-shadow:
-        0 8px 30px rgba(0,0,0,0.06);
+    .manifesto .small-label {
+      color: #c8cfad;
     }
 
-    .participa-box h2 {
-      font-size: 36px;
-      color: #123c69;
-      margin-bottom: 20px;
-    }
-
-    .participa-box p {
-      font-size: 18px;
-      margin-bottom: 25px;
-      color: #475569;
-    }
-
-    .participa .button {
-      background: #176b87;
+    .manifesto .section-title {
       color: white;
     }
 
-    /* FOOTER */
-
-    footer {
-      background: #0f2942;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 35px 20px;
+    .manifesto-intro {
+      max-width: 890px;
+      font-size: 21px;
+      color: #f0dfdf;
+      margin-bottom: 50px;
     }
 
-    /* MÓVIL */
+    .manifesto-list {
+      counter-reset: manifesto;
+      max-width: 950px;
+    }
 
-    @media(max-width: 700px) {
+    .manifesto-item {
+      counter-increment: manifesto;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      padding: 27px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
 
-      nav ul {
+    .manifesto-item::before {
+      content: "0" counter(manifesto);
+      color: #c8cfad;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding-top: 5px;
+    }
+
+    .manifesto-item h3 {
+      font-size: 25px;
+      margin-bottom: 7px;
+      color: white;
+    }
+
+    .manifesto-item p {
+      color: #eadcdd;
+      max-width: 800px;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       OBJETIVOS
+    ========================= */
+
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid #d8d0c4;
+    }
+
+    .objective {
+      padding: 35px 35px 35px 0;
+      border-bottom: 1px solid #d8d0c4;
+    }
+
+    .objective:nth-child(even) {
+      padding-left: 35px;
+      border-left: 1px solid #d8d0c4;
+    }
+
+    .objective h3 {
+      color: #642033;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .objective p {
+      color: #4b4f52;
+      font-size: 17px;
+      max-width: 490px;
+    }
+
+
+    /* =========================
+       PERSONAS
+    ========================= */
+
+    .people {
+      background: #e8eadc;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .people-card {
+      background: #f6f1e8;
+      padding: 27px 24px;
+      min-height: 220px;
+      border-top: 4px solid #642033;
+    }
+
+    .people-card h3 {
+      color: #642033;
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .people-card p {
+      font-size: 16px;
+      color: #494d50;
+    }
+
+
+    /* =========================
+       PRINCIPIOS
+    ========================= */
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .principle {
+      border-top: 2px solid #6e7d4f;
+      padding-top: 20px;
+    }
+
+    .principle h3 {
+      color: #642033;
+      font-size: 23px;
+      margin-bottom: 11px;
+    }
+
+    .principle p {
+      color: #4b4e51;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      background: #fffdf8;
+    }
+
+    .faq-list {
+      max-width: 950px;
+    }
+
+    details {
+      border-top: 1px solid #d6cec2;
+      padding: 23px 0;
+    }
+
+    details:last-child {
+      border-bottom: 1px solid #d6cec2;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #642033;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    details p {
+      max-width: 800px;
+      color: #4e5154;
+      font-size: 17px;
+      margin-top: 15px;
+    }
+
+
+    /* =========================
+       PARTICIPA
+    ========================= */
+
+    .join {
+      background: #242827;
+      color: white;
+      border-bottom: 0;
+    }
+
+    .join .small-label {
+      color: #bec99c;
+    }
+
+    .join .section-title {
+      color: #ffffff;
+    }
+
+    .join-text {
+      max-width: 850px;
+      font-size: 20px;
+      color: #dededa;
+      margin-bottom: 32px;
+    }
+
+    .join .button-primary {
+      background: #f6f1e8;
+      color: #642033;
+      border-color: #f6f1e8;
+    }
+
+    .join .button-primary:hover {
+      background: white;
+    }
+
+    .join-note {
+      margin-top: 28px;
+      color: #afb3b0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      max-width: 700px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #171918;
+      color: #bfc2bf;
+      padding: 36px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-title {
+      color: white;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-note {
+        max-width: 700px;
+      }
+
+      .diagnosis-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .people-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .principles-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .nav-links {
         display: none;
       }
 
       .hero {
-        padding: 75px 20px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 18px;
+        padding: 72px 0 65px;
       }
 
       section {
-        padding: 65px 20px;
+        padding: 70px 0;
       }
 
-      .section-title {
-        font-size: 32px;
+      .hero h1 {
+        font-size: 44px;
       }
 
-      .participa-box {
-        padding: 30px;
+      .hero-lead {
+        font-size: 19px;
+      }
+
+      .diagnosis-grid,
+      .objectives-grid,
+      .people-grid,
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .objective,
+      .objective:nth-child(even) {
+        padding: 28px 0;
+        border-left: 0;
+      }
+
+      .manifesto-item {
+        grid-template-columns: 45px 1fr;
       }
 
     }
@@ -262,318 +617,1161 @@
 <body>
 
 
-<header>
+  <!-- =========================
+       CABECERA
+  ========================== -->
 
-  <nav>
+  <header>
 
-    <a class="logo" href="#">
-      UPAI
-    </a>
+    <div class="container">
 
-    <ul>
+      <nav>
 
-      <li>
-        <a href="#objetivos">
-          Qué defendemos
+        <a href="#" class="brand">
+
+          <span class="brand-name">
+            UPAI
+          </span>
+
+          <span class="brand-subtitle">
+            Universidad · Investigación · Trabajo digno
+          </span>
+
         </a>
-      </li>
 
-      <li>
-        <a href="#personas">
-          A quién representamos
-        </a>
-      </li>
 
-      <li>
-        <a href="#participa">
+        <ul class="nav-links">
+
+          <li>
+            <a href="#diagnostico">
+              Diagnóstico
+            </a>
+          </li>
+
+          <li>
+            <a href="#manifiesto">
+              Manifiesto
+            </a>
+          </li>
+
+          <li>
+            <a href="#objetivos">
+              Qué defendemos
+            </a>
+          </li>
+
+          <li>
+            <a href="#participa">
+              Participa
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+
+        <div>
+
+          <div class="small-label">
+            Universidad · Investigación · Trabajo digno
+          </div>
+
+          <h1>
+            La universidad y la investigación no deben sostenerse sobre la precariedad estructural.
+          </h1>
+
+          <p class="hero-lead">
+
+            Queremos construir una organización especializada,
+            independiente y democrática capaz de defender a quienes
+            trabajan en la universidad y la investigación en España.
+
+            Nuestro objetivo es claro: reducir la precariedad estructural,
+            hacer más previsible la carrera académica y científica y
+            mejorar las condiciones en las que se enseña, se investiga
+            y se produce conocimiento.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              href="#participa"
+              class="button button-primary"
+            >
+              Quiero participar
+            </a>
+
+            <a
+              href="#manifiesto"
+              class="button button-secondary"
+            >
+              Leer el manifiesto
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <aside class="hero-note">
+
+          <h2>
+            Estamos empezando.
+          </h2>
+
+          <p>
+
+            UPAI se encuentra todavía en fase de construcción.
+
+          </p>
+
+          <p>
+
+            Queremos reunir a personas de universidades,
+            organismos públicos de investigación y centros científicos
+            que compartan la necesidad de construir una representación
+            especializada para nuestro sector.
+
+          </p>
+
+          <p>
+
+            Primero queremos escuchar, organizar y construir una base sólida.
+
+          </p>
+
+        </aside>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DIAGNÓSTICO
+    ========================== -->
+
+    <section
+      id="diagnostico"
+      class="diagnosis"
+    >
+
+      <div class="container">
+
+
+        <div class="small-label">
+          El punto de partida
+        </div>
+
+
+        <h2 class="section-title">
+          Queremos cambiar una carrera académica demasiado marcada por la incertidumbre.
+        </h2>
+
+
+        <p class="section-intro">
+
+          Muchas personas pasan años enlazando etapas temporales,
+          compitiendo por convocatorias sucesivas y tratando de
+          compatibilizar investigación, docencia, gestión y vida personal.
+
+          Queremos contribuir a construir un sistema en el que desarrollar
+          una carrera universitaria o científica no implique aceptar
+          indefinidamente la inseguridad como condición normal.
+
+        </p>
+
+
+
+        <div class="diagnosis-grid">
+
+
+          <article class="diagnosis-item">
+
+            <span class="diagnosis-number">
+              01
+            </span>
+
+            <h3>
+              Precariedad estructural
+            </h3>
+
+            <p>
+
+              Queremos reducir la dependencia permanente de figuras
+              temporales para cubrir necesidades que son estructurales.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="diagnosis-item">
+
+            <span class="diagnosis-number">
+              02
+            </span>
+
+            <h3>
+              Carrera imprevisible
+            </h3>
+
+            <p>
+
+              Aspiramos a una trayectoria profesional con reglas
+              comprensibles, procesos transparentes y horizontes
+              razonables de estabilización.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="diagnosis-item">
+
+            <span class="diagnosis-number">
+              03
+            </span>
+
+            <h3>
+              Trabajo fragmentado
+            </h3>
+
+            <p>
+
+              Docencia, investigación, administración y evaluación
+              deben organizarse de manera compatible con un trabajo
+              académico y científico de calidad.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MANIFIESTO
+    ========================== -->
+
+    <section
+      id="manifiesto"
+      class="manifesto"
+    >
+
+      <div class="container">
+
+
+        <div class="small-label">
+          Manifiesto fundacional
+        </div>
+
+
+        <h2 class="section-title">
+          Una organización para defender la universidad y la investigación desde quienes trabajan en ellas.
+        </h2>
+
+
+        <p class="manifesto-intro">
+
+          Nuestro proyecto parte de varias convicciones sencillas.
+
+        </p>
+
+
+
+        <div class="manifesto-list">
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                El trabajo académico y científico merece estabilidad.
+              </h3>
+
+              <p>
+
+                La temporalidad puede existir en determinadas etapas,
+                pero no debería convertirse en una situación permanente
+                para cubrir necesidades que se repiten año tras año.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                La excelencia no se construye sobre la inseguridad.
+              </h3>
+
+              <p>
+
+                Una universidad y una ciencia fuertes necesitan personas
+                capaces de planificar proyectos, familias y carreras
+                profesionales con un horizonte razonable.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                Investigar requiere tiempo.
+              </h3>
+
+              <p>
+
+                El tiempo dedicado a producir conocimiento no puede
+                quedar sistemáticamente absorbido por sobrecarga docente,
+                administrativa o burocrática.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                La docencia debe reconocerse y organizarse dignamente.
+              </h3>
+
+              <p>
+
+                Enseñar forma parte del corazón de la universidad.
+                Su carga debe distribuirse de manera razonable y no
+                recaer desproporcionadamente sobre quienes tienen
+                posiciones más vulnerables.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                Las distintas etapas de la carrera deben tener voz.
+              </h3>
+
+              <p>
+
+                Predoctorales, postdoctorales, profesorado laboral,
+                funcionarios, investigadores permanentes y personal
+                técnico tienen problemas diferentes, pero también
+                intereses comunes.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                La representación debe construirse desde abajo.
+              </h3>
+
+              <p>
+
+                Queremos una organización democrática, transparente
+                y conectada con universidades y centros de investigación,
+                no una estructura distante de quienes trabajan en ellos.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="manifesto-item">
+
+            <div>
+
+              <h3>
+                Queremos una organización independiente.
+              </h3>
+
+              <p>
+
+                Nuestro espacio común debe ser la defensa del trabajo
+                universitario y científico, con autonomía respecto de
+                partidos políticos y otros intereses externos.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OBJETIVOS
+    ========================== -->
+
+    <section id="objetivos">
+
+      <div class="container">
+
+
+        <div class="small-label">
+          Qué queremos defender
+        </div>
+
+
+        <h2 class="section-title">
+          Una agenda concreta para transformar las condiciones de la carrera académica y científica.
+        </h2>
+
+
+        <p class="section-intro">
+
+          Estas propuestas no son un programa cerrado.
+
+          Queremos discutirlas, mejorarlas y construirlas
+          colectivamente con personas de distintas universidades,
+          disciplinas y etapas profesionales.
+
+        </p>
+
+
+
+        <div class="objectives-grid">
+
+
+          <article class="objective">
+
+            <h3>
+              Reducir la precariedad estructural
+            </h3>
+
+            <p>
+
+              Limitar el uso continuado de figuras temporales
+              cuando existen necesidades estructurales y favorecer
+              vías reales de estabilización.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Una carrera académica más previsible
+            </h3>
+
+            <p>
+
+              Reglas claras, procesos transparentes,
+              calendarios razonables y mejores transiciones
+              entre las diferentes etapas profesionales.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Salarios y condiciones dignas
+            </h3>
+
+            <p>
+
+              Defender remuneraciones adecuadas a la cualificación,
+              responsabilidad y valor social del trabajo académico,
+              científico y técnico.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Protección del tiempo de investigación
+            </h3>
+
+            <p>
+
+              Garantizar que quienes tienen responsabilidades
+              investigadoras dispongan realmente del tiempo
+              necesario para desarrollarlas.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Cargas docentes razonables
+            </h3>
+
+            <p>
+
+              Buscar una distribución de la docencia compatible
+              con la investigación, la preparación docente,
+              la gestión y la calidad universitaria.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Menos burocracia innecesaria
+            </h3>
+
+            <p>
+
+              Simplificar procedimientos y evitar que una parte
+              excesiva del trabajo académico se convierta
+              en tareas administrativas repetitivas.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Conciliación y vida personal
+            </h3>
+
+            <p>
+
+              Una carrera académica o científica debe poder
+              desarrollarse sin exigir renunciar a la vida
+              personal, familiar o de cuidados.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="objective">
+
+            <h3>
+              Transparencia
+            </h3>
+
+            <p>
+
+              Promover información clara sobre condiciones,
+              salarios, procesos de selección, promoción,
+              acreditación y contratación.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         A QUIÉN REPRESENTAR
+    ========================== -->
+
+    <section class="people">
+
+      <div class="container">
+
+
+        <div class="small-label">
+          Una organización amplia
+        </div>
+
+
+        <h2 class="section-title">
+          Queremos reunir a personas de toda la carrera universitaria y científica.
+        </h2>
+
+
+        <p class="section-intro">
+
+          No queremos construir una organización limitada a una
+          única etapa profesional.
+
+          La precariedad de quienes empiezan, las condiciones de
+          quienes se estabilizan y la calidad futura del sistema
+          están conectadas.
+
+        </p>
+
+
+
+        <div class="people-grid">
+
+
+          <article class="people-card">
+
+            <h3>
+              Predoctorales
+            </h3>
+
+            <p>
+
+              Personas que realizan su tesis doctoral y comienzan
+              su trayectoria en investigación y docencia.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="people-card">
+
+            <h3>
+              Postdoctorales
+            </h3>
+
+            <p>
+
+              Investigadores en etapas posteriores al doctorado,
+              tanto nacionales como internacionales.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="people-card">
+
+            <h3>
+              Profesorado universitario
+            </h3>
+
+            <p>
+
+              Personal docente e investigador laboral,
+              funcionarios y otras figuras académicas.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="people-card">
+
+            <h3>
+              Personal investigador
+            </h3>
+
+            <p>
+
+              Investigadores de universidades, OPIs,
+              institutos y centros públicos de investigación.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="people-card">
+
+            <h3>
+              Personal técnico
+            </h3>
+
+            <p>
+
+              Profesionales imprescindibles para laboratorios,
+              infraestructuras, proyectos y actividad científica.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRINCIPIOS
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="small-label">
+          Cómo queremos organizarnos
+        </div>
+
+
+        <h2 class="section-title">
+          La forma de construir la organización también importa.
+        </h2>
+
+
+        <div class="principles-grid">
+
+
+          <article class="principle">
+
+            <h3>
+              Independencia
+            </h3>
+
+            <p>
+
+              Una organización centrada en los intereses profesionales
+              y laborales del personal universitario y científico,
+              con autonomía respecto de partidos políticos.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="principle">
+
+            <h3>
+              Democracia interna
+            </h3>
+
+            <p>
+
+              Las decisiones importantes deben depender de sus miembros
+              y las distintas etapas profesionales deben estar
+              representadas.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="principle">
+
+            <h3>
+              Transparencia
+            </h3>
+
+            <p>
+
+              Queremos cuentas claras, decisiones explicables
+              y una estructura comprensible para quienes formen
+              parte de la organización.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="principle">
+
+            <h3>
+              Especialización
+            </h3>
+
+            <p>
+
+              Universidad, ciencia e investigación tienen problemas
+              propios que requieren experiencia jurídica,
+              laboral y profesional específica.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="principle">
+
+            <h3>
+              Presencia local
+            </h3>
+
+            <p>
+
+              La organización debe construirse desde universidades
+              y centros de investigación, no únicamente desde
+              una estructura estatal.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="principle">
+
+            <h3>
+              Cooperación
+            </h3>
+
+            <p>
+
+              Defender nuestros intereses no exige tratar a otras
+              organizaciones como adversarios permanentes.
+
+              Habrá reivindicaciones en las que tenga sentido colaborar.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section class="faq">
+
+      <div class="container">
+
+
+        <div class="small-label">
+          Preguntas frecuentes
+        </div>
+
+
+        <h2 class="section-title">
+          El proyecto está empezando. Estas son algunas respuestas importantes.
+        </h2>
+
+
+
+        <div class="faq-list">
+
+
+          <details>
+
+            <summary>
+              ¿UPAI es ya un sindicato?
+            </summary>
+
+            <p>
+
+              No.
+
+              UPAI está actualmente en fase de construcción.
+
+              Queremos crear primero una comunidad sólida,
+              definir de forma colectiva nuestros objetivos
+              y estudiar cuidadosamente la futura estructura
+              jurídica y organizativa.
+
+            </p>
+
+          </details>
+
+
+
+          <details>
+
+            <summary>
+              ¿Hace falta ser profesor universitario?
+            </summary>
+
+            <p>
+
+              No.
+
+              Queremos reunir a personas de distintas etapas
+              y perfiles vinculados a la universidad,
+              investigación y ciencia.
+
+            </p>
+
+          </details>
+
+
+
+          <details>
+
+            <summary>
+              ¿Pueden participar predoctorales y postdoctorales?
+            </summary>
+
+            <p>
+
+              Sí.
+
+              De hecho, reducir la precariedad estructural
+              y mejorar las condiciones de las primeras etapas
+              de la carrera investigadora son objetivos centrales
+              del proyecto.
+
+            </p>
+
+          </details>
+
+
+
+          <details>
+
+            <summary>
+              ¿UPAI está vinculada a algún partido político?
+            </summary>
+
+            <p>
+
+              No.
+
+              La intención es construir una organización
+              profesional y laboral independiente,
+              centrada en universidad, investigación y ciencia.
+
+            </p>
+
+          </details>
+
+
+
+          <details>
+
+            <summary>
+              ¿Tengo que afiliarme ya?
+            </summary>
+
+            <p>
+
+              No existe todavía afiliación sindical.
+
+              En esta primera fase buscamos personas interesadas
+              en conocer el proyecto, aportar ideas y ayudar
+              a construirlo.
+
+            </p>
+
+          </details>
+
+
+
+          <details>
+
+            <summary>
+              ¿Qué necesita ahora mismo el proyecto?
+            </summary>
+
+            <p>
+
+              Necesitamos conocer personas de diferentes universidades
+              y centros de investigación, detectar problemas comunes
+              y formar pequeños grupos capaces de empezar a organizarse
+              localmente.
+
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PARTICIPA
+    ========================== -->
+
+    <section
+      id="participa"
+      class="join"
+    >
+
+      <div class="container">
+
+
+        <div class="small-label">
           Participa
+        </div>
+
+
+        <h2 class="section-title">
+          Una organización de este tipo solo puede construirse colectivamente.
+        </h2>
+
+
+        <p class="join-text">
+
+          Si trabajas o investigas en una universidad,
+          un OPI, un instituto o un centro de investigación
+          y compartes la necesidad de mejorar nuestras
+          condiciones profesionales, queremos conocerte.
+
+          No necesitas experiencia sindical.
+
+          Buscamos personas dispuestas a aportar ideas,
+          experiencia, contactos y tiempo para construir
+          algo nuevo.
+
+        </p>
+
+
+
+        <a
+          class="button button-primary"
+          href="mailto:TUEMAIL@AQUI.COM"
+        >
+          Quiero participar
         </a>
-      </li>
-
-    </ul>
-
-  </nav>
-
-</header>
 
 
-<main>
+        <p class="join-note">
 
+          Importante: sustituye upacademicoinvestigador.COM en el código
+          por el correo electrónico que quieras utilizar para el proyecto.
 
-<section class="hero">
-
-  <div class="hero-content">
-
-    <h1>
-      Por una universidad y una investigación con futuro
-    </h1>
-
-    <p>
-      Estamos construyendo una iniciativa para mejorar las
-      condiciones laborales y profesionales del personal
-      universitario y de investigación en España.
-    </p>
-
-    <a class="button" href="#participa">
-      Quiero participar
-    </a>
-
-    <a class="button button-secondary" href="#objetivos">
-      Conoce la iniciativa
-    </a>
-
-  </div>
-
-</section>
-
-
-<section id="objetivos">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      ¿Qué queremos cambiar?
-    </h2>
-
-    <p class="section-intro">
-      Queremos contribuir a construir una carrera académica
-      y científica más estable, transparente y sostenible.
-    </p>
-
-
-    <div class="cards">
-
-
-      <div class="card">
-
-        <h3>
-          Carrera académica
-        </h3>
-
-        <p>
-          Una trayectoria profesional predecible y con
-          oportunidades reales de estabilización.
         </p>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="footer-title">
+          UPAI
+        </span>
+
+        · Universidad · Investigación · Trabajo digno
 
       </div>
 
 
-      <div class="card">
+      <div>
 
-        <h3>
-          Precariedad
-        </h3>
-
-        <p>
-          Reducir la temporalidad estructural y mejorar
-          las condiciones de investigadores jóvenes.
-        </p>
+        Proyecto actualmente en fase de construcción.
 
       </div>
-
-
-      <div class="card">
-
-        <h3>
-          Salarios
-        </h3>
-
-        <p>
-          Retribuciones dignas y competitivas para
-          quienes trabajan en universidad e investigación.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Investigación
-        </h3>
-
-        <p>
-          Proteger el tiempo necesario para investigar
-          y desarrollar proyectos científicos.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Docencia
-        </h3>
-
-        <p>
-          Cargas docentes razonables y compatibles
-          con la actividad investigadora.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Conciliación
-        </h3>
-
-        <p>
-          Una carrera académica compatible con
-          la vida personal y familiar.
-        </p>
-
-      </div>
-
 
     </div>
 
-  </div>
-
-</section>
-
-
-<section id="personas">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Una organización para toda la carrera académica
-    </h2>
-
-    <p class="section-intro">
-
-      Queremos crear un espacio común para quienes
-      trabajan haciendo universidad, ciencia e investigación.
-
-    </p>
-
-
-    <div class="cards">
-
-
-      <div class="card">
-
-        <h3>
-          Predoctorales
-        </h3>
-
-        <p>
-          Investigadores que están realizando su tesis doctoral.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Postdoctorales
-        </h3>
-
-        <p>
-          Investigadores en las distintas etapas
-          posteriores al doctorado.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Profesorado universitario
-        </h3>
-
-        <p>
-          PDI laboral, funcionarios y otras figuras
-          docentes e investigadoras.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Investigación y OPIs
-        </h3>
-
-        <p>
-          Personal investigador de organismos y
-          centros públicos de investigación.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Personal técnico
-        </h3>
-
-        <p>
-          Profesionales esenciales para el funcionamiento
-          de laboratorios y proyectos científicos.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section
-  id="participa"
-  class="participa"
->
-
-  <div class="container">
-
-    <div class="participa-box">
-
-      <h2>
-        Ayúdanos a construirlo
-      </h2>
-
-      <p>
-        Esta iniciativa está en sus primeras etapas.
-        Buscamos personas de universidades y centros
-        de investigación de toda España que quieran
-        participar en su construcción.
-      </p>
-
-      <a
-        class="button"
-        href="mailto:contacto@ejemplo.es"
-      >
-        Quiero participar
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-  <p>
-    © 2026 UPAI · Iniciativa de Universidad e Investigación
-  </p>
-
-</footer>
+  </footer>
 
 
 </body>
