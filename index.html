@@ -1,46 +1,581 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPAI</title>
+
+  <title>UPAI | Universidad e Investigación</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* CABECERA */
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e4e8ef;
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 20px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #123c69;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #176b87;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #123c69, #176b87);
+
+      color: white;
+
+      padding: 110px 25px;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 720px;
+      margin-bottom: 35px;
+      color: #e6f3f7;
+    }
+
+    .button {
+      display: inline-block;
+
+      background: white;
+      color: #123c69;
+
+      padding: 14px 25px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+      font-weight: 700;
+
+      margin-right: 10px;
+    }
+
+    .button-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* SECCIONES */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 15px;
+      color: #123c69;
+    }
+
+    .section-intro {
+      font-size: 19px;
+      color: #64748b;
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    /* TARJETAS */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 12px;
+
+      border: 1px solid #e3e8ef;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #123c69;
+    }
+
+    .card p {
+      color: #64748b;
+    }
+
+    /* PARTICIPACIÓN */
+
+    .participa {
+      background: #eaf3f7;
+    }
+
+    .participa-box {
+      max-width: 850px;
+
+      background: white;
+
+      padding: 50px;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .participa-box h2 {
+      font-size: 36px;
+      color: #123c69;
+      margin-bottom: 20px;
+    }
+
+    .participa-box p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #475569;
+    }
+
+    .participa .button {
+      background: #176b87;
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0f2942;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    /* MÓVIL */
+
+    @media(max-width: 700px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .participa-box {
+        padding: 30px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-  <h1>UPAI</h1>
 
-  <h2>Universidad e investigación con futuro</h2>
+<header>
+
+  <nav>
+
+    <a class="logo" href="#">
+      UPAI
+    </a>
+
+    <ul>
+
+      <li>
+        <a href="#objetivos">
+          Qué defendemos
+        </a>
+      </li>
+
+      <li>
+        <a href="#personas">
+          A quién representamos
+        </a>
+      </li>
+
+      <li>
+        <a href="#participa">
+          Participa
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Por una universidad y una investigación con futuro
+    </h1>
+
+    <p>
+      Estamos construyendo una iniciativa para mejorar las
+      condiciones laborales y profesionales del personal
+      universitario y de investigación en España.
+    </p>
+
+    <a class="button" href="#participa">
+      Quiero participar
+    </a>
+
+    <a class="button button-secondary" href="#objetivos">
+      Conoce la iniciativa
+    </a>
+
+  </div>
+
+</section>
+
+
+<section id="objetivos">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      ¿Qué queremos cambiar?
+    </h2>
+
+    <p class="section-intro">
+      Queremos contribuir a construir una carrera académica
+      y científica más estable, transparente y sostenible.
+    </p>
+
+
+    <div class="cards">
+
+
+      <div class="card">
+
+        <h3>
+          Carrera académica
+        </h3>
+
+        <p>
+          Una trayectoria profesional predecible y con
+          oportunidades reales de estabilización.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Precariedad
+        </h3>
+
+        <p>
+          Reducir la temporalidad estructural y mejorar
+          las condiciones de investigadores jóvenes.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Salarios
+        </h3>
+
+        <p>
+          Retribuciones dignas y competitivas para
+          quienes trabajan en universidad e investigación.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Investigación
+        </h3>
+
+        <p>
+          Proteger el tiempo necesario para investigar
+          y desarrollar proyectos científicos.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Docencia
+        </h3>
+
+        <p>
+          Cargas docentes razonables y compatibles
+          con la actividad investigadora.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Conciliación
+        </h3>
+
+        <p>
+          Una carrera académica compatible con
+          la vida personal y familiar.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="personas">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Una organización para toda la carrera académica
+    </h2>
+
+    <p class="section-intro">
+
+      Queremos crear un espacio común para quienes
+      trabajan haciendo universidad, ciencia e investigación.
+
+    </p>
+
+
+    <div class="cards">
+
+
+      <div class="card">
+
+        <h3>
+          Predoctorales
+        </h3>
+
+        <p>
+          Investigadores que están realizando su tesis doctoral.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Postdoctorales
+        </h3>
+
+        <p>
+          Investigadores en las distintas etapas
+          posteriores al doctorado.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Profesorado universitario
+        </h3>
+
+        <p>
+          PDI laboral, funcionarios y otras figuras
+          docentes e investigadoras.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Investigación y OPIs
+        </h3>
+
+        <p>
+          Personal investigador de organismos y
+          centros públicos de investigación.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Personal técnico
+        </h3>
+
+        <p>
+          Profesionales esenciales para el funcionamiento
+          de laboratorios y proyectos científicos.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  id="participa"
+  class="participa"
+>
+
+  <div class="container">
+
+    <div class="participa-box">
+
+      <h2>
+        Ayúdanos a construirlo
+      </h2>
+
+      <p>
+        Esta iniciativa está en sus primeras etapas.
+        Buscamos personas de universidades y centros
+        de investigación de toda España que quieran
+        participar en su construcción.
+      </p>
+
+      <a
+        class="button"
+        href="mailto:contacto@ejemplo.es"
+      >
+        Quiero participar
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
 
   <p>
-    Iniciativa para mejorar las condiciones laborales y profesionales
-    del personal universitario y de investigación en España.
+    © 2026 UPAI · Iniciativa de Universidad e Investigación
   </p>
 
-  <h2>¿Qué queremos cambiar?</h2>
+</footer>
 
-  <ul>
-    <li>Precariedad y temporalidad</li>
-    <li>Carrera académica</li>
-    <li>Salarios</li>
-    <li>Carga docente</li>
-    <li>Condiciones de investigación</li>
-    <li>Conciliación</li>
-  </ul>
-
-  <h2>¿Quién puede participar?</h2>
-
-  <p>
-    Predoctorales, postdoctorales, profesorado universitario,
-    investigadores, personal de OPIs y personal técnico de investigación.
-  </p>
-
-  <h2>Participa</h2>
-
-  <p>
-    Estamos construyendo una iniciativa para mejorar la universidad
-    y la investigación en España.
-  </p>
 
 </body>
+
 </html>
